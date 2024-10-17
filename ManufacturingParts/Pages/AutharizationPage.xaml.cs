@@ -25,6 +25,7 @@ namespace ManufacturingParts.Pages
         public AutharizationPage()
         {
             InitializeComponent();
+            CheckSavedCredentials();
         }
 
         private void CheckSavedCredentials()
@@ -43,8 +44,9 @@ namespace ManufacturingParts.Pages
         {
             string login = txtLogin.Text;
             string password = txtPassword.Password;
+           
 
-            if (AuthenticateUser(login, password, out string role))
+            if (AuthenticateUser(login, password, out string role, out string fullName))
             {
                 if (chkRememberMe.IsChecked == true)
                 {
@@ -58,21 +60,24 @@ namespace ManufacturingParts.Pages
                 switch (role)
                 {
                     case "Заказчик":
-                        ShowUserScreen("Экран заказчика");
+                        ShowUserScreen("Экран заказчика", fullName);
+                       
                         
                         break;
                     case "Менеджер":
-                        ShowUserScreen("Экран менеджера");
+                        ShowUserScreen("Экран менеджера", fullName); 
+                        NavigationService.Navigate(new ManagerPage());
                         break;
                     case "Конструктор":
-                        ShowUserScreen("Экран конструктора");
+                        ShowUserScreen("Экран конструктора", fullName);
+                        NavigationService.Navigate(new DesignerPage());
                         break;
                     case "Мастер":
-                        ShowUserScreen("Экран мастера");
+                        ShowUserScreen("Экран мастера", fullName);
                         NavigationService.Navigate(new MasterPage());
                         break;
                     case "Директор":
-                        ShowUserScreen("Экран директора");
+                        ShowUserScreen("Экран директора", fullName);
                         NavigationService.Navigate(new DirectorPage());
                         break;
                 }
@@ -82,26 +87,26 @@ namespace ManufacturingParts.Pages
                 MessageBox.Show("Неверный логин или пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        private bool AuthenticateUser(string login, string password, out string role)
+        private bool AuthenticateUser(string login, string password, out string role, out string fullName)
         {
             role = string.Empty;
-           
+            fullName = string.Empty;
             using (var db = new UchKornilovaEntities())
             {
                 var user = db.User.FirstOrDefault(u => u.Login == login && u.Password == password);
                 if (user != null)
                 {
                     role = user.Role.Name;
-                    
+                    fullName = $"{user.FirstName} {user.LastName}";
                     return true;
                 }
             }
             return false;
         }
 
-        private void ShowUserScreen(string screenTitle)
+        private void ShowUserScreen(string screenTitle, string fullName)
         {
-            MessageBox.Show($"Добро пожаловать, {txtLogin.Text}! Вы перенаправлены на {screenTitle}.", "Успешная авторизация");
+            MessageBox.Show($"Добро пожаловать, {fullName}! Вы перенаправлены на {screenTitle}.", "Успешная авторизация");
             
         }
 
