@@ -91,7 +91,7 @@ namespace ManufacturingParts.Pages
         {
             role = string.Empty;
             fullName = string.Empty;
-            using (var db = new UchKornilovaEntities())
+            using (var db = new UchebkaKornilovaEntities())
             {
                 var user = db.User.FirstOrDefault(u => u.Login == login && u.Password == password);
                 if (user != null)

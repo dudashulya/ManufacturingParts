@@ -10,8 +10,8 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
-            <Button x:Name="CustomerBtn" Content="Работники"></Button>
-            <Button x:Name="MaterialBtn" Content="Материалы и комплектующие"></Button>
+            <Button x:Name="CustomerBtn" Content="Работники" Click="CustomerBtn_Click"></Button>
+            <Button x:Name="MaterialBtn" Content="Материалы и комплектующие" Click="MaterialBtn_Click"></Button>
             <Button x:Name="LayoutBtn" Content="Планировка цехов"></Button>
             <Button x:Name="OrderBtn" Content="Заказы"></Button>
         </StackPanel>

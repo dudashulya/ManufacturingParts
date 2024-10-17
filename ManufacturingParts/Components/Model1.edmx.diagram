@@ -4,51 +4,58 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fe92a88238b54a5880c0ef8db6390398" Name="Diagram1">
-        <EntityTypeShape EntityType="UchKornilovaModel.Accessories" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.AcessoriesImage" Width="1.5" PointX="1.5" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Document" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Equipment" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Material" Width="1.5" PointX="3.75" PointY="26.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.MaterialImage" Width="1.5" PointX="1.5" PointY="36" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.OperationSpecification" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Order" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Product" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.ProductAccessories" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.ProductDetail" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Role" Width="1.5" PointX="1.5" PointY="30.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Size" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Standart" Width="1.5" PointX="1.5" PointY="38.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Supplier" Width="1.5" PointX="1.5" PointY="22.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.TypeAccessories" Width="1.5" PointX="1.5" PointY="24.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.TypeEquipment" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.TypeMaterial" Width="1.5" PointX="1.5" PointY="40.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.Unit" Width="1.5" PointX="1.5" PointY="27.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.User" Width="1.5" PointX="3.75" PointY="31" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchKornilovaModel.UserImage" Width="1.5" PointX="1.5" PointY="33" IsExpanded="true" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Accessories_AcessoriesImage" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Accessories_Supplier1" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Accessories_TypeAccessories" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Accessories_Unit" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_ProductAccessories_Accessories" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Document_Order" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Equipment_TypeEquipment" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Material_MaterialImage" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Material_Standart" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Material_TypeMaterial" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Material_Unit" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_OperationSpecification_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_OperationSpecification_TypeEquipment" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Order_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Order_User2" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Order_User3" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_ProductAccessories_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_ProductDetail_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_ProductDetail_Product1" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Size_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_User_Role" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_Size_Unit" ManuallyRouted="false" />
-        <AssociationConnector Association="UchKornilovaModel.FK_User_UserImage" ManuallyRouted="false" />
+      <Diagram DiagramId="52f4c6fbffbd4fbc94e954d0b141edcd" Name="Diagram1">
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Accessories" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.AcessoriesImage" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Document" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Equipment" Width="1.5" PointX="3" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Material" Width="1.5" PointX="0.75" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.MaterialImage" Width="1.5" PointX="1.5" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Operation" Width="1.5" PointX="3.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.OperationSpecification" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Order" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Product" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.ProductAccessories" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.ProductDetail" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.ProductMaterial" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Role" Width="1.5" PointX="1.5" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Size" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Standart" Width="1.5" PointX="1.5" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Supplier" Width="1.5" PointX="1.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.TypeAccessories" Width="1.5" PointX="1.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.TypeEquipment" Width="1.5" PointX="0.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.TypeMaterial" Width="1.5" PointX="1.5" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.Unit" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.User" Width="1.5" PointX="3.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.UserImage" Width="1.5" PointX="1.5" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaKornilovaModel.UserOperation" Width="1.5" PointX="6" PointY="28" IsExpanded="true" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Accessories_AcessoriesImage" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Accessories_Supplier1" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Accessories_TypeAccessories" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Accessories_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_ProductAccessories_Accessories" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Document_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Equipment_TypeEquipment" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Material_MaterialImage" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Material_Standart" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Material_TypeMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Material_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_ProductMaterial_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_UserOperation_Operation" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_OperationSpecification_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_OperationSpecification_TypeEquipment" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Order_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Order_User2" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Order_User3" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_ProductAccessories_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_ProductDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_ProductDetail_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_ProductMaterial_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Size_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_Size_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_User_UserImage" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaKornilovaModel.FK_UserOperation_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -22,6 +22,7 @@ namespace ManufacturingParts.Components
             this.ProductAccessories = new HashSet<ProductAccessories>();
             this.ProductDetail = new HashSet<ProductDetail>();
             this.ProductDetail1 = new HashSet<ProductDetail>();
+            this.ProductMaterial = new HashSet<ProductMaterial>();
             this.Size = new HashSet<Size>();
         }
     
@@ -38,6 +39,8 @@ namespace ManufacturingParts.Components
         public virtual ICollection<ProductDetail> ProductDetail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductDetail> ProductDetail1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Size> Size { get; set; }
     }

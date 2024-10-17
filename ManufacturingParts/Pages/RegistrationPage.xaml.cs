@@ -1,20 +1,13 @@
 ﻿using ManufacturingParts.Components;
-using System;
-using System.Collections.Generic;
+using Microsoft.Win32;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ManufacturingParts.Pages
 {
@@ -23,6 +16,8 @@ namespace ManufacturingParts.Pages
     /// </summary>
     public partial class RegistrationPage : Page
     {
+        UserImage image = new UserImage();
+        User user = new User();
         public RegistrationPage()
         {
             InitializeComponent();
@@ -33,6 +28,9 @@ namespace ManufacturingParts.Pages
             string login = txtRegLogin.Text;
             string password = txtRegPassword.Password;
             string confirmPassword = txtRegConfirmPassword.Password;
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            string patronymic = txtPatronymic.Text;
 
             if (!ValidatePassword(password))
             {
@@ -46,7 +44,7 @@ namespace ManufacturingParts.Pages
                 return;
             }
 
-            if (RegisterUser(login, password))
+            if (RegisterUser(login, password, firstName, lastName,patronymic))
             {
                 MessageBox.Show("Регистрация прошла успешно.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService.Navigate(new AutharizationPage());
@@ -75,9 +73,9 @@ namespace ManufacturingParts.Pages
             return true;
         }
 
-        private bool RegisterUser(string login, string password)
+        private bool RegisterUser(string login, string password, string firstName, string lastName, string patronymic)
         {
-            using (var db = new UchKornilovaEntities())
+            using (var db = new UchebkaKornilovaEntities())
             {
                 var existingUser = db.User.FirstOrDefault(u => u.Login == login);
                 if (existingUser != null)
@@ -87,7 +85,10 @@ namespace ManufacturingParts.Pages
                 {
                     Login = login,
                     Password = password,
-                    RoleId = 4
+                    RoleId = 4,
+                    LastName = lastName,
+                    FirstName = firstName,
+                    Patronymic = patronymic
                 };
 
                 db.User.Add(newUser);
@@ -99,6 +100,34 @@ namespace ManufacturingParts.Pages
         private void btnBackToLogin_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void LoadImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var opn = new OpenFileDialog();
+            opn.Title = "Выберите изображение";
+            opn.Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif;*.tif;*.tiff|All Files|*.*";
+            if (opn.ShowDialog() == true)
+            {
+                image.Photo = File.ReadAllBytes(opn.FileName);
+                if (image.Id == 0)
+                    App.db.UserImage.Add(image);
+                user.IdUserImage = image.Id;
+                MainImage.Source = Methods.GetBitmapImageFromBytes(image.Photo);
+            }
+        }
+
+        private void DeleteImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (image.Id == 0)
+                image.Photo = null;
+            else
+            {
+                App.db.UserImage.Remove(image);
+                image = new UserImage();
+            }
+            user.IdUserImage = null;
+            MainImage.Source = null;
         }
     }
 }

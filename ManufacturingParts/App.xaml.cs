@@ -14,6 +14,6 @@ namespace ManufacturingParts
     /// </summary>
     public partial class App : Application
     {
-        public static UchKornilovaEntities db = new UchKornilovaEntities();
+        public static UchebkaKornilovaEntities db = new UchebkaKornilovaEntities();
     }
 }

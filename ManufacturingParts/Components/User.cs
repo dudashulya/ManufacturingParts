@@ -19,6 +19,7 @@ namespace ManufacturingParts.Components
         {
             this.Order = new HashSet<Order>();
             this.Order1 = new HashSet<Order>();
+            this.UserOperation = new HashSet<UserOperation>();
         }
     
         public string Login { get; set; }
@@ -28,6 +29,10 @@ namespace ManufacturingParts.Components
         public string FirstName { get; set; }
         public string Patronymic { get; set; }
         public Nullable<int> IdUserImage { get; set; }
+        public Nullable<System.DateTime> DateBithday { get; set; }
+        public string Address { get; set; }
+        public string Post { get; set; }
+        public string Education { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
@@ -35,5 +40,7 @@ namespace ManufacturingParts.Components
         public virtual ICollection<Order> Order1 { get; set; }
         public virtual Role Role { get; set; }
         public virtual UserImage UserImage { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserOperation> UserOperation { get; set; }
     }
 }

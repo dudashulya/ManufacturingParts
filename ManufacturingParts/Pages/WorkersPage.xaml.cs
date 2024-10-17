@@ -16,23 +16,28 @@ using System.Windows.Shapes;
 namespace ManufacturingParts.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для DirectorPage.xaml
+    /// Логика взаимодействия для WorkersPage.xaml
     /// </summary>
-    public partial class DirectorPage : Page
+    public partial class WorkersPage : Page
     {
-        public DirectorPage()
+        public WorkersPage()
         {
             InitializeComponent();
+            LoadEmployees();
+        }
+        private void LoadEmployees()
+        {
+
+            var employees = App.db.User.Where(u => u.RoleId != 4).ToList();
+
+            EmployeesGrid.ItemsSource = employees;
         }
 
-        private void MaterialBtn_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new MaterialPage());
-        }
+        
 
-        private void CustomerBtn_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-             NavigationService.Navigate(new WorkersPage());
+            NavigationService.Navigate(new AddEditWorkersPage());
         }
     }
 }

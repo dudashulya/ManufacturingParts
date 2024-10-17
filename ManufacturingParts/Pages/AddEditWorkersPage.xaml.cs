@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace ManufacturingParts.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для DirectorPage.xaml
+    /// Логика взаимодействия для AddEditWorkersPage.xaml
     /// </summary>
-    public partial class DirectorPage : Page
+    public partial class AddEditWorkersPage : Page
     {
-        public DirectorPage()
+        public AddEditWorkersPage()
         {
             InitializeComponent();
-        }
-
-        private void MaterialBtn_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new MaterialPage());
-        }
-
-        private void CustomerBtn_Click(object sender, RoutedEventArgs e)
-        {
-             NavigationService.Navigate(new WorkersPage());
         }
     }
 }
