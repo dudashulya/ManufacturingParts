@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AutharizationPage">
 
-    <Grid>
+    <Grid Background="#FFF3CC8D">
         <StackPanel Width="300" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Логин:" Margin="0,0,0,5"/>
             <TextBox x:Name="txtLogin" Margin="0,0,0,10"/>

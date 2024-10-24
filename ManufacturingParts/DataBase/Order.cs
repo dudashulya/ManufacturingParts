@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;

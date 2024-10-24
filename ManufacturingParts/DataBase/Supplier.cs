@@ -7,36 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Material
+    public partial class Supplier
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Material()
+        public Supplier()
         {
-            this.ProductMaterial = new HashSet<ProductMaterial>();
+            this.Accessories = new HashSet<Accessories>();
         }
     
-        public string Article { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> IdUnit { get; set; }
-        public Nullable<decimal> Count { get; set; }
         public string SupplierName { get; set; }
-        public Nullable<int> IdMaterialImage { get; set; }
-        public Nullable<int> IdTypeMaterial { get; set; }
-        public Nullable<decimal> PriceOneKg { get; set; }
-        public Nullable<int> IdStandart { get; set; }
-        public Nullable<decimal> WidthMetr { get; set; }
-        public Nullable<decimal> MassOneMetr { get; set; }
+        public string Address { get; set; }
+        public string DeliveryTime { get; set; }
     
-        public virtual MaterialImage MaterialImage { get; set; }
-        public virtual Standart Standart { get; set; }
-        public virtual TypeMaterial TypeMaterial { get; set; }
-        public virtual Unit Unit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
+        public virtual ICollection<Accessories> Accessories { get; set; }
     }
 }

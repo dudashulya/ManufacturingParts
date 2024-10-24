@@ -7,23 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TypeMaterial
+    public partial class UserOperation
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypeMaterial()
-        {
-            this.Material = new HashSet<Material>();
-        }
-    
         public int Id { get; set; }
-        public string Name { get; set; }
+        public Nullable<int> IdOperation { get; set; }
+        public string Login { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Material> Material { get; set; }
+        public virtual Operation Operation { get; set; }
+        public virtual User User { get; set; }
     }
 }

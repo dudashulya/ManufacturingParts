@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ManufacturingParts.DataBase;
 
 namespace ManufacturingParts.Pages
 {
@@ -91,7 +92,7 @@ namespace ManufacturingParts.Pages
         {
             role = string.Empty;
             fullName = string.Empty;
-            using (var db = new UchebkaKornilovaEntities())
+            using (var db = new UchebkaKornilovaEntities1())
             {
                 var user = db.User.FirstOrDefault(u => u.Login == login && u.Password == password);
                 if (user != null)

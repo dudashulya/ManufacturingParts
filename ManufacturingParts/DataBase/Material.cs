@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Accessories
+    public partial class Material
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Accessories()
+        public Material()
         {
-            this.ProductAccessories = new HashSet<ProductAccessories>();
+            this.ProductMaterial = new HashSet<ProductMaterial>();
         }
     
         public string Article { get; set; }
@@ -25,16 +25,18 @@ namespace ManufacturingParts.Components
         public Nullable<int> IdUnit { get; set; }
         public Nullable<decimal> Count { get; set; }
         public string SupplierName { get; set; }
-        public Nullable<int> IdAcessoriesImage { get; set; }
-        public Nullable<int> IdTypeAccessories { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public Nullable<decimal> Weight { get; set; }
+        public Nullable<int> IdMaterialImage { get; set; }
+        public Nullable<int> IdTypeMaterial { get; set; }
+        public Nullable<decimal> PriceOneKg { get; set; }
+        public Nullable<int> IdStandart { get; set; }
+        public Nullable<decimal> WidthMetr { get; set; }
+        public Nullable<decimal> MassOneMetr { get; set; }
     
-        public virtual AcessoriesImage AcessoriesImage { get; set; }
-        public virtual Supplier Supplier { get; set; }
-        public virtual TypeAccessories TypeAccessories { get; set; }
+        public virtual MaterialImage MaterialImage { get; set; }
+        public virtual Standart Standart { get; set; }
+        public virtual TypeMaterial TypeMaterial { get; set; }
         public virtual Unit Unit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductAccessories> ProductAccessories { get; set; }
+        public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
     }
 }

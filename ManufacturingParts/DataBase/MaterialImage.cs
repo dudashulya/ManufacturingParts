@@ -7,18 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Document
+    public partial class MaterialImage
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Format { get; set; }
-        public Nullable<int> IdOrder { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MaterialImage()
+        {
+            this.Material = new HashSet<Material>();
+        }
     
-        public virtual Order Order { get; set; }
+        public int Id { get; set; }
+        public byte[] Photo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Material> Material { get; set; }
     }
 }

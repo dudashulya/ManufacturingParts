@@ -7,20 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class OperationSpecification
+    public partial class sysdiagrams
     {
-        public int IdProduct { get; set; }
-        public string Operation { get; set; }
-        public int Number { get; set; }
-        public Nullable<int> IdTypeEquipment { get; set; }
-        public Nullable<System.TimeSpan> Duration { get; set; }
-    
-        public virtual Product Product { get; set; }
-        public virtual TypeEquipment TypeEquipment { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

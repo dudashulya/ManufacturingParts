@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManufacturingParts.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ManufacturingParts.DataBase;
 
 namespace ManufacturingParts.Pages
 {
@@ -23,21 +25,63 @@ namespace ManufacturingParts.Pages
         public WorkersPage()
         {
             InitializeComponent();
-            LoadEmployees();
-        }
-        private void LoadEmployees()
-        {
-
-            var employees = App.db.User.Where(u => u.RoleId != 4).ToList();
-
-            EmployeesGrid.ItemsSource = employees;
+            SortCb.SelectedIndex = 0;
         }
 
-        
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Refresh()
         {
-            NavigationService.Navigate(new AddEditWorkersPage());
+            IEnumerable<User> employee = App.db.User.Where(x => x.RoleId != 4);
+
+            if (SearchTb.Text != "")
+                employee = employee.Where(x => x.FIO.Contains(SearchTb.Text));
+
+
+            if (SortCb.SelectedIndex == 1)
+                employee = employee.OrderBy(x => x.LastName);
+            else if (SortCb.SelectedIndex == 2)
+                employee = employee.OrderByDescending(x => x.LastName);
+            else if (SortCb.SelectedIndex == 3)
+                employee = employee.OrderBy(x => x.Age);
+            else if (SortCb.SelectedIndex == 4)
+                employee = employee.OrderByDescending(x => x.Age);
+            else if (SortCb.SelectedIndex == 5)
+                employee = employee.OrderBy(x => x.RoleId);
+
+
+            MyList.ItemsSource = employee.ToList();
+        }
+
+
+       
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.workersPage = this;
+            NavigationService.Navigate(new AddEditWorkersPage(new User(), true));
+        }
+
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void SortCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void Edit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            App.workersPage = this;
+            NavigationService.Navigate(new AddEditWorkersPage((sender as Image).DataContext as User, false, "Редактировать сотрудника"));
+        }
+
+        private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(Methods.TakeChoice("Вы точно хотите удалить сотрудника?"))
+            {
+                App.db.User.Remove((sender as Image).DataContext as User);
+                Methods.TakeInformation("Успешно удалено!");
+            }
         }
     }
 }

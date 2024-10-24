@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using ManufacturingParts.DataBase;
 
 using static System.Net.Mime.MediaTypeNames;
 
@@ -75,7 +76,7 @@ namespace ManufacturingParts.Pages
 
         private bool RegisterUser(string login, string password, string firstName, string lastName, string patronymic)
         {
-            using (var db = new UchebkaKornilovaEntities())
+            using (var db = new UchebkaKornilovaEntities1())
             {
                 var existingUser = db.User.FirstOrDefault(u => u.Login == login);
                 if (existingUser != null)

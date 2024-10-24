@@ -5,10 +5,99 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ManufacturingParts.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="550" d:DesignWidth="800"
       Title="AddEditWorkersPage">
 
     <Grid>
-        
+        <StackPanel x:Name="MainPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="TitleTb" FontWeight="Bold" FontSize="20" Foreground="#FFBB0C07" HorizontalAlignment="Center" Margin="0 0 0 20">Добавить сотрудника</TextBlock>
+            <StackPanel Orientation="Horizontal" >
+                <StackPanel VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Width="100">Логин</TextBlock>
+                        <TextBox x:Name="LoginTb" Width="200" Text="{Binding Login}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Width="100">Пароль</TextBlock>
+                        <TextBox x:Name="PasswordTb" Width="200" Text="{Binding Password}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Width="100">Роль</TextBlock>
+                        <ComboBox Width="200" x:Name="RoleCb" DisplayMemberPath="Name"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Width="100">Фамилия</TextBlock>
+                        <TextBox x:Name="LastNameCb" Width="200"  Text="{Binding LastName}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Width="100">Имя</TextBlock>
+                        <TextBox x:Name="FirstNameCb" Width="200" Text="{Binding FirstName}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Width="100">Отчество</TextBlock>
+                        <TextBox x:Name="PatronymicCb" Width="200"  Text="{Binding Patronymic}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Width="100" VerticalAlignment="Center">Дата рождения</TextBlock>
+                        <DatePicker Width="200" SelectedDate="{Binding DateBithday}"></DatePicker>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10" x:Name="PostPanel">
+                        <TextBlock Width="100">Должность</TextBlock>
+                        <TextBox Width="200" Text="{Binding Post}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0 0 0 10" x:Name="EducationPanel">
+                        <TextBlock Width="100" Margin="0 0 0 5" HorizontalAlignment="Left">Образование</TextBlock>
+                        <TextBox TextWrapping="Wrap" Height="80"  Text="{Binding Education}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0 0 0 10">
+                        <TextBlock Width="100" Margin="0 0 0 5" HorizontalAlignment="Left">Адресс</TextBlock>
+                        <TextBox TextWrapping="Wrap" Height="50"  Text="{Binding Address}"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="PhotoPanel" Margin="40 0 0 0" VerticalAlignment="Center" Visibility="Collapsed">
+                    <Border CornerRadius="5" BorderThickness="2" BorderBrush="#FFBB0C07">
+                        <Image x:Name="MainImage" Width="300" Height="350"></Image>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
+                        <Button x:Name="LoadBtn" Width="250" Margin="0 0 20 0"   >Загрузить изображение</Button>
+                        <Image x:Name="DeleteImage" Width="30" MouseDown="DeleteImage_MouseDown"    ></Image>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel x:Name="OperationPanel" Visibility="Visible" Margin="30 0 0 0" VerticalAlignment="Center">
+                    <ListView x:Name="MyList" Width="400" Height="350">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn Header="Операция" Width="300">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="OperationTb" Text="{Binding Name}" TextChanged="OperationTb_TextChanged"  ></TextBox>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="delete" Width="70" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Visibility="{Binding User.canEdit}" x:Name="Delete" Width="70" HorizontalAlignment="Center" Height="30" ></Image>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                    <Button x:Name="AddBtn"  Margin="0 10 0 0" Width="200" Click="AddBtn_Click"  >
+                        Добавить
+                    </Button>
+
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="SaveBtn"  Margin="0 10 0 0" Width="300" >Сохранить</Button>
+        </StackPanel>
+
+        <Button x:Name="Back"  Width="40" Height="40" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Back_Click" ></Button>
+    
     </Grid>
 </Page>

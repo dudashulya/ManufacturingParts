@@ -30,5 +30,9 @@ namespace ManufacturingParts.Components
             MessageBoxResult result = MessageBox.Show(text, "Информация", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             return result == MessageBoxResult.Yes ? true : false;
         }
+        public static void TakeWarning(string text)
+        {
+            MessageBox.Show(text, "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
     }
 }

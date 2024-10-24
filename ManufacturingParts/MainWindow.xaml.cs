@@ -21,10 +21,29 @@ namespace ManufacturingParts
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow Instance { get; private set; }
         public MainWindow()
         {
             InitializeComponent();
-            MyFrame.NavigationService.Navigate(new AutharizationPage());
+            App.mainWindow = this;
+           
+            if (Instance == null)
+                Instance = this;
+            else
+                return;
+
+            if (App.currentUser != null)
+            {
+                MyFrame.NavigationService.Navigate(App.GetRightPage());
+                return;
+            }
+
+             MyFrame.NavigationService.Navigate(new AutharizationPage());
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

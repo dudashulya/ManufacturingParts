@@ -5,9 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManufacturingParts"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Frame  x:Name="MyFrame" NavigationUIVisibility="Hidden" ></Frame>
+        Title="ManufacturingParts" Height="450" Width="800">
+    <Grid  Background="#FFF3CC8D">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="310*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Content="Выйти" HorizontalAlignment="Left" VerticalAlignment="Center"
+ FontSize="18" FontWeight="Medium" Margin="10,0,0,0"  Name="ExitBtn" Width="100" 
+ Background="#4867ac" Foreground="White" Click="ExitBtn_Click"/>
+        <TextBlock Grid.Row="1" Name="UserFullNameText" HorizontalAlignment="Right" VerticalAlignment="Center"
+ FontSize="18" FontWeight="Medium"/>
+        <Frame  x:Name="MyFrame" NavigationUIVisibility="Hidden" Grid.Row="1"  ></Frame>
+        <Image Grid.Row="0" Source="/Resources/Logo_Monochrome.png" Height="70" Width="60" Margin="0 0 0 0">
+            <Image.Effect>
+                <DropShadowEffect Opacity="0.8" BlurRadius="10" Direction="314" ShadowDepth="7" Color="Black"></DropShadowEffect>
+            </Image.Effect>
+        </Image>
 
 
     </Grid>

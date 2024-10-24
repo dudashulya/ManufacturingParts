@@ -7,23 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Operation
+    public partial class Equipment
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Operation()
-        {
-            this.UserOperation = new HashSet<UserOperation>();
-        }
+        public string Model { get; set; }
+        public Nullable<int> IdTypeEquipment { get; set; }
+        public string Characteristic { get; set; }
     
-        public int Id { get; set; }
-        public string Name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserOperation> UserOperation { get; set; }
+        public virtual TypeEquipment TypeEquipment { get; set; }
     }
 }

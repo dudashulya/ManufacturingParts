@@ -7,18 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class UserOperation
+    public partial class Size
     {
         public int Id { get; set; }
-        public Nullable<int> IdOperation { get; set; }
-        public string Login { get; set; }
+        public string Name { get; set; }
+        public Nullable<decimal> SizeValue { get; set; }
+        public Nullable<int> IdUnit { get; set; }
+        public Nullable<int> IdProduct { get; set; }
     
-        public virtual Operation Operation { get; set; }
-        public virtual User User { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Unit Unit { get; set; }
     }
 }

@@ -7,19 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductMaterial
+    public partial class TypeAccessories
     {
-        public int Id { get; set; }
-        public Nullable<int> IdProduct { get; set; }
-        public string MaterialArticle { get; set; }
-        public decimal Count { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TypeAccessories()
+        {
+            this.Accessories = new HashSet<Accessories>();
+        }
     
-        public virtual Material Material { get; set; }
-        public virtual Product Product { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Accessories> Accessories { get; set; }
     }
 }

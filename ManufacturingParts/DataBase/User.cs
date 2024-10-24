@@ -7,29 +7,40 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Unit
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Unit()
+        public User()
         {
-            this.Accessories = new HashSet<Accessories>();
-            this.Material = new HashSet<Material>();
-            this.Size = new HashSet<Size>();
+            this.Order = new HashSet<Order>();
+            this.Order1 = new HashSet<Order>();
+            this.UserOperation = new HashSet<UserOperation>();
         }
     
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public Nullable<int> RoleId { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string Patronymic { get; set; }
+        public Nullable<int> IdUserImage { get; set; }
+        public Nullable<System.DateTime> DateBithday { get; set; }
+        public string Address { get; set; }
+        public string Post { get; set; }
+        public string Education { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Accessories> Accessories { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Material> Material { get; set; }
+        public virtual ICollection<Order> Order1 { get; set; }
+        public virtual Role Role { get; set; }
+        public virtual UserImage UserImage { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Size> Size { get; set; }
+        public virtual ICollection<UserOperation> UserOperation { get; set; }
     }
 }

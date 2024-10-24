@@ -7,19 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ManufacturingParts.Components
+namespace ManufacturingParts.DataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductAccessories
+    public partial class ProductDetail
     {
-        public int Id { get; set; }
         public int IdProduct { get; set; }
-        public string AccessoriesArticle { get; set; }
-        public decimal Count { get; set; }
+        public int IdDetail { get; set; }
+        public Nullable<int> Count { get; set; }
     
-        public virtual Accessories Accessories { get; set; }
         public virtual Product Product { get; set; }
+        public virtual Product Product1 { get; set; }
     }
 }
